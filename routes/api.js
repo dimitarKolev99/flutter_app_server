@@ -19,7 +19,7 @@ router.post('/product', function(req, res, next) {
     .catch(next);
 });
 
-//update a ninja in the db
+/* //update a ninja in the db
 router.put('/ninjas/:id', function(req, res, next) {
     Ninja.findByIdAndUpdate({ _id: req.params.id }, req.body)
     .then(function(ninja) {
@@ -36,6 +36,6 @@ router.delete('/ninjas/:id', function(req, res, next) {
             res.send(ninja);
         })
         .catch(next);
-});
+}); */
 
 module.exports = router;
