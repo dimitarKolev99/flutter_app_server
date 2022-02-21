@@ -11,6 +11,13 @@ router.get('/product', function(req, res, next) {
     });
 });
 
+/* router.get('/product/category', function(req, res, next) {
+    Product.find({ category: category }).then(function(products) {
+        res.send(products);
+    });
+}); */
+
+
 //add a new ninja to the db
 router.post('/product', function(req, res, next) {
     Product.create(req.body).then(function(product) {
