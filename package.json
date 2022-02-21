@@ -1,5 +1,5 @@
 {
-  "name": "simple_server",
+  "name": "node_server",
   "engines": {
     "node": "14.15.1"
   },

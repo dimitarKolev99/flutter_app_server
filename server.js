@@ -25,7 +25,7 @@ app.use(cookieParser());
 
 
 //init public folder
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
 
 //Config CORS
 app.use(cors());
@@ -58,8 +58,10 @@ function x(ws) {
 app.use('/api', require('./routes/api'));
 
 //default route
-app.get('/', function (req, res) { 
-  res.sendFile(path.join(__dirname+'/index.html'));
+app.get('/', function(req, res, next) {
+  Product.find({}).then(function(products) {
+      res.send(products);
+  });
 });
 
 //error logging
