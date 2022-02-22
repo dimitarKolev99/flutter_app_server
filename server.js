@@ -54,15 +54,16 @@ function x(ws) {
 
 } */
 
-//Init routes
-app.use('/api', require('./routes/api'));
 
 //default route
 app.get('/', function(req, res, next) {
   Product.find({}).then(function(products) {
-      res.send(products);
+    res.send(products);
   });
 });
+
+//Init routes
+app.use('/api', require('./routes/api'));
 
 //error logging
 app.use(function (err, req, res, next) {

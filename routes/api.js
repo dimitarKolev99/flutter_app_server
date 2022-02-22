@@ -3,13 +3,22 @@ const router = express.Router();
 const Product = require('../models/product');
 
 
+router.get('/product/:id', function(req, res, next) {
+    console.log(req.params)
+    Product.find({ 'id': req.params.id }).then(function(products) {
+        res.send(products);
+    })
+    .catch(next);
+});
 
-//get a list of ninjas from the db
+//get a list of products from the db
 router.get('/product', function(req, res, next) {
     Product.find({}).then(function(products) {
         res.send(products);
     });
 });
+
+
 
 /* router.get('/product/category', function(req, res, next) {
     Product.find({ category: category }).then(function(products) {
